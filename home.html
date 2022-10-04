@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p id="pai">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
+			facere. Rem nesciunt quos itaque quasi magnam excepturi amet
+			<strong id="filho">voluptatem </strong>vitae, accusamus laboriosam
+			eius sequi vero sit odit eum, ducimus laborum?
+		</p>
+
+		<div id="resultado"></div>
+
+		<script type="text/javascript">
+			let pai = document.getElementById("pai");
+			let filho = document.getElementById("filho");
+			let resutado = document.getElementById("resultado");
+
+			let i = 1;
+
+			function chamada() {
+				console.log("chamou " + i++);
+				resutado.innerText = i;
+			}
+
+			let executa = setInterval(chamada, 1);
+
+			pai.addEventListener("click", function () {
+				console.log("clicou no pai");
+			});
+
+			filho.addEventListener("click", function () {
+				console.log("clicou no filho");
+				clearInterval(executa);
+			});
+		</script>
+	</body>
+</html>
